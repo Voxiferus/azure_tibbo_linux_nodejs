@@ -109,7 +109,7 @@ For installing, open an SSH session, connect to the device and do the following:
 <a name="BuildSamples"></a>
 ## 3.2 Build the samples
 
--   To validate the source code run the following commands on the device.
+-   To validate the source code run the following commands on the device:
 
         export IOTHUB_CONNECTION_STRING='<iothub_connection_string>'
 
@@ -137,13 +137,13 @@ For installing, open an SSH session, connect to the device and do the following:
 
         npm install azure-iot-device-mqtt	
 
--   To update sample, run the following command on device.
+-   To update sample, run the following command on device:
 
         mc
         
--   This launched Midnight Commander. Select simple_sample_device.js on the left tab and push F4 to edit.            
+-   This launched Midnight Commander. Select **simple_sample_device.js** on the left tab and push F4 to edit.            
 
--   Find the below code (line 5):
+-   Find the following code (line 5):
 
         var Protocol = require('azure-iot-device-amqp').Amqp;
 	
