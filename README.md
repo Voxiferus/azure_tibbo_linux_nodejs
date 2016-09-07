@@ -20,7 +20,7 @@ Run a simple JavaScript sample on LTPP3-based Tibbo Project System running Tibbo
 
 **About this document**
 
-This document describes how to connect {enter your device name here} device running {enter the OS name running on device} with Azure IoT SDK. This multi-step process includes:
+This document describes how to connect LTPP3-based Tibbo Project System  device running Tibbo Linux with Azure IoT SDK. This multi-step process includes:
 -   Configuring Azure IoT Hub
 -   Registering your IoT device
 -   Build and deploy Azure IoT SDK on device
@@ -30,8 +30,8 @@ This document describes how to connect {enter your device name here} device runn
 
 You should have the following items ready before beginning the process:
 
--   [Setup your IoT hub][https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md]
--   [Provision your device and get its credentials][lnk-manage-iot-hub]
+-   [Setup your IoT hub](https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md)
+-   [Provision your device and get its credentials](https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md)
 -   Computer with Git client installed 
 -   LTPP3-based TPS device or LTPP3 board.
 -   Tibbit Module #49 (Micro SD Card)
