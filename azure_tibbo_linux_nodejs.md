@@ -30,11 +30,10 @@ This document describes how to connect {enter your device name here} device runn
 
 You should have the following items ready before beginning the process:
 
--   [Prepare your development environment][setup-devbox-linux]
--   [Setup your IoT hub][lnk-setup-iot-hub]
+-   [Setup your IoT hub][https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md]
 -   [Provision your device and get its credentials][lnk-manage-iot-hub]
 -   Computer with Git client installed 
--   LTPP3 board device.
+-   LTPP3-based TPS device or LTPP3 board.
 -   Tibbit Module #49 (Micro SD Card)
 -   2 x Tibbits #00-1 (4 Direct IO Lines)
 -   Micro SD Card with at least 1 GB
@@ -47,9 +46,11 @@ You should have the following items ready before beginning the process:
 LTPP3 has only 512Mb of NAND while at least 650Mb of free space needed to run tests.
 To enhance disk space the SD Card Tibbit Module must be installed:
 
-- Put Tibbit Module #49 (Micro SD Card) into S22-S24 socket
-- Put an SD card into Tibbits slot
+- Put Tibbit Module #49 (Micro SD Card) into S22-S24 socket as shown on the scheme below
+- Insert an SD card into Tibbits slot
 - Put Tibbits #00-1 (4 Direct IO Lines) into S21 and S23 sockets
+
+![Tibbits Layout](images/tibbits-layout.png)
 
 Attention: it's strongly recommended to turn power off before installing or removing Tibbit modules.
 
@@ -69,8 +70,8 @@ Attention: all data on the SD card will be lost.
         mkfs.ext2 /dev/mmcblk0p1
            
 - Note: it tooks about a minute to format a 4GB SD card
-- Remove and install the card back
-- Open an SSH session ad verify that a new folder (proposed name is /mmc0p1) appears in /mnt directory           
+- Remove SD card and insert it again
+- Open an SSH session and verify that a new folder (proposed name is /mmc0p1) appears in /mnt directory           
 
 ## Preparing software
 
@@ -112,15 +113,13 @@ For installing, open an SSH session, connect to the device and do the following:
 
         export IOTHUB_CONNECTION_STRING='<iothub_connection_string>'
 
-    Replace the `<iothub_connection_string>` placeholder with IoTHub Connection String you got in [Step 1](#Prerequisites).    
+    Replace the `<iothub_connection_string>` placeholder with IoTHub Connection String you got in [Step 1](https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md).    
 
 -   Run the following commands 
 
         cd /mnt/mmc0p1/azure-iot-sdks/node
         build/dev-setup.sh
-        build/build.sh | tee LogFile.txt
-
-    ***Note:*** *LogFile.txt in above command should be replaced with a file name where build output will be written.*
+        build/build.sh | tee log.txt
 
 -   Install npm package to run sample.
 
@@ -156,7 +155,7 @@ For installing, open an SSH session, connect to the device and do the following:
 
         var connectionString = "[IoT Device Connection String]";
 
--   Replace the above placeholder with device connection string. You can get this from DeviceExplorer as explained in [Step 1](#Prerequisites), that you copied into Notepad.
+-   Replace the above placeholder with **device connection string**. You can get this from DeviceExplorer as explained [here](https://github.com/Azure/azure-iot-sdks/blob/develop/tools/DeviceExplorer/doc/how_to_use_device_explorer.md#createdevice), that you copied into Notepad.
 
 -   Save your changes by pressing F2, then press F10 to close editor.
 
@@ -175,13 +174,8 @@ For installing, open an SSH session, connect to the device and do the following:
 
         node /mnt/mmc0p1/azure-iot-sdks/node/device/samples/simple_sample_device.js
 
--   See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to observe the messages IoT Hub receives from the application.
+-   See [Manage IoT Hub][https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-nodejs.md] to learn how to observe the messages IoT Hub receives from the application.
 
 ### 3.3.2 Receive messages from IoT Hub
 
--   See [Manage IoT Hub][lnk-manage-iot-hub] to learn how to send cloud-to-device messages to the application.
-
-
-[setup-devbox-linux]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
-[lnk-setup-iot-hub]: ../../setup_iothub.md
-[lnk-manage-iot-hub]: ../../manage_iot_hub.md
+-   See [Manage IoT Hub][https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-nodejs.md] to learn how to send cloud-to-device messages to the application.
