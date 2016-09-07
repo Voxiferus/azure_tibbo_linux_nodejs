@@ -174,8 +174,8 @@ For installing, open an SSH session, connect to the device and do the following:
 
         node /mnt/mmc0p1/azure-iot-sdks/node/device/samples/simple_sample_device.js
 
--   See [Manage IoT Hub][https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-nodejs.md] to learn how to observe the messages IoT Hub receives from the application.
+-   See [Manage IoT Hub](https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-nodejs.md) to learn how to observe the messages IoT Hub receives from the application.
 
 ### 3.3.2 Receive messages from IoT Hub
 
--   See [Manage IoT Hub][https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-nodejs.md] to learn how to send cloud-to-device messages to the application.
+-   See [Manage IoT Hub](https://github.com/Azure/azure-iot-sdks/blob/master/doc/iotcertification/templates/template-linux-nodejs.md) to learn how to send cloud-to-device messages to the application.
